@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2943E37B250EE6110090578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E37A250EE6110090578E /* AppDelegate.swift */; };
+		2943E37D250EE6110090578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E37C250EE6110090578E /* SceneDelegate.swift */; };
+		2943E37F250EE6110090578E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E37E250EE6110090578E /* ViewController.swift */; };
+		2943E382250EE6110090578E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2943E380250EE6110090578E /* Main.storyboard */; };
+		2943E384250EE6160090578E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2943E383250EE6160090578E /* Assets.xcassets */; };
+		2943E387250EE6160090578E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2943E385250EE6160090578E /* LaunchScreen.storyboard */; };
+		2943E392250EE6160090578E /* WorseSpotifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E391250EE6160090578E /* WorseSpotifyTests.swift */; };
+		2943E39D250EE6160090578E /* WorseSpotifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E39C250EE6160090578E /* WorseSpotifyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2943E38E250EE6160090578E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2943E36F250EE6110090578E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2943E376250EE6110090578E;
+			remoteInfo = WorseSpotify;
+		};
+		2943E399250EE6160090578E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2943E36F250EE6110090578E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2943E376250EE6110090578E;
+			remoteInfo = WorseSpotify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2943E377250EE6110090578E /* WorseSpotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorseSpotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2943E37A250EE6110090578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2943E37C250EE6110090578E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2943E37E250EE6110090578E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2943E381250EE6110090578E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2943E383250EE6160090578E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2943E386250EE6160090578E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2943E388250EE6160090578E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2943E38D250EE6160090578E /* WorseSpotifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorseSpotifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2943E391250EE6160090578E /* WorseSpotifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorseSpotifyTests.swift; sourceTree = "<group>"; };
+		2943E393250EE6160090578E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2943E398250EE6160090578E /* WorseSpotifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorseSpotifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2943E39C250EE6160090578E /* WorseSpotifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorseSpotifyUITests.swift; sourceTree = "<group>"; };
+		2943E39E250EE6160090578E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2943E374250EE6110090578E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2943E38A250EE6160090578E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2943E395250EE6160090578E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2943E36E250EE6110090578E = {
+			isa = PBXGroup;
+			children = (
+				2943E379250EE6110090578E /* WorseSpotify */,
+				2943E390250EE6160090578E /* WorseSpotifyTests */,
+				2943E39B250EE6160090578E /* WorseSpotifyUITests */,
+				2943E378250EE6110090578E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2943E378250EE6110090578E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2943E377250EE6110090578E /* WorseSpotify.app */,
+				2943E38D250EE6160090578E /* WorseSpotifyTests.xctest */,
+				2943E398250EE6160090578E /* WorseSpotifyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2943E379250EE6110090578E /* WorseSpotify */ = {
+			isa = PBXGroup;
+			children = (
+				2943E37A250EE6110090578E /* AppDelegate.swift */,
+				2943E37C250EE6110090578E /* SceneDelegate.swift */,
+				2943E37E250EE6110090578E /* ViewController.swift */,
+				2943E380250EE6110090578E /* Main.storyboard */,
+				2943E383250EE6160090578E /* Assets.xcassets */,
+				2943E385250EE6160090578E /* LaunchScreen.storyboard */,
+				2943E388250EE6160090578E /* Info.plist */,
+			);
+			path = WorseSpotify;
+			sourceTree = "<group>";
+		};
+		2943E390250EE6160090578E /* WorseSpotifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				2943E391250EE6160090578E /* WorseSpotifyTests.swift */,
+				2943E393250EE6160090578E /* Info.plist */,
+			);
+			path = WorseSpotifyTests;
+			sourceTree = "<group>";
+		};
+		2943E39B250EE6160090578E /* WorseSpotifyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2943E39C250EE6160090578E /* WorseSpotifyUITests.swift */,
+				2943E39E250EE6160090578E /* Info.plist */,
+			);
+			path = WorseSpotifyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2943E376250EE6110090578E /* WorseSpotify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2943E3A1250EE6160090578E /* Build configuration list for PBXNativeTarget "WorseSpotify" */;
+			buildPhases = (
+				2943E373250EE6110090578E /* Sources */,
+				2943E374250EE6110090578E /* Frameworks */,
+				2943E375250EE6110090578E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorseSpotify;
+			productName = WorseSpotify;
+			productReference = 2943E377250EE6110090578E /* WorseSpotify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2943E38C250EE6160090578E /* WorseSpotifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2943E3A4250EE6160090578E /* Build configuration list for PBXNativeTarget "WorseSpotifyTests" */;
+			buildPhases = (
+				2943E389250EE6160090578E /* Sources */,
+				2943E38A250EE6160090578E /* Frameworks */,
+				2943E38B250EE6160090578E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2943E38F250EE6160090578E /* PBXTargetDependency */,
+			);
+			name = WorseSpotifyTests;
+			productName = WorseSpotifyTests;
+			productReference = 2943E38D250EE6160090578E /* WorseSpotifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2943E397250EE6160090578E /* WorseSpotifyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2943E3A7250EE6160090578E /* Build configuration list for PBXNativeTarget "WorseSpotifyUITests" */;
+			buildPhases = (
+				2943E394250EE6160090578E /* Sources */,
+				2943E395250EE6160090578E /* Frameworks */,
+				2943E396250EE6160090578E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2943E39A250EE6160090578E /* PBXTargetDependency */,
+			);
+			name = WorseSpotifyUITests;
+			productName = WorseSpotifyUITests;
+			productReference = 2943E398250EE6160090578E /* WorseSpotifyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2943E36F250EE6110090578E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Angelina Olmedo";
+				TargetAttributes = {
+					2943E376250EE6110090578E = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					2943E38C250EE6160090578E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 2943E376250EE6110090578E;
+					};
+					2943E397250EE6160090578E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 2943E376250EE6110090578E;
+					};
+				};
+			};
+			buildConfigurationList = 2943E372250EE6110090578E /* Build configuration list for PBXProject "WorseSpotify" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2943E36E250EE6110090578E;
+			productRefGroup = 2943E378250EE6110090578E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2943E376250EE6110090578E /* WorseSpotify */,
+				2943E38C250EE6160090578E /* WorseSpotifyTests */,
+				2943E397250EE6160090578E /* WorseSpotifyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2943E375250EE6110090578E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2943E387250EE6160090578E /* LaunchScreen.storyboard in Resources */,
+				2943E384250EE6160090578E /* Assets.xcassets in Resources */,
+				2943E382250EE6110090578E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2943E38B250EE6160090578E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2943E396250EE6160090578E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2943E373250EE6110090578E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2943E37F250EE6110090578E /* ViewController.swift in Sources */,
+				2943E37B250EE6110090578E /* AppDelegate.swift in Sources */,
+				2943E37D250EE6110090578E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2943E389250EE6160090578E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2943E392250EE6160090578E /* WorseSpotifyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2943E394250EE6160090578E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2943E39D250EE6160090578E /* WorseSpotifyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2943E38F250EE6160090578E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2943E376250EE6110090578E /* WorseSpotify */;
+			targetProxy = 2943E38E250EE6160090578E /* PBXContainerItemProxy */;
+		};
+		2943E39A250EE6160090578E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2943E376250EE6110090578E /* WorseSpotify */;
+			targetProxy = 2943E399250EE6160090578E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2943E380250EE6110090578E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2943E381250EE6110090578E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2943E385250EE6160090578E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2943E386250EE6160090578E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2943E39F250EE6160090578E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2943E3A0250EE6160090578E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2943E3A2250EE6160090578E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U774TM88M6;
+				INFOPLIST_FILE = WorseSpotify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.WorseSpotify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2943E3A3250EE6160090578E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U774TM88M6;
+				INFOPLIST_FILE = WorseSpotify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.WorseSpotify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2943E3A5250EE6160090578E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U774TM88M6;
+				INFOPLIST_FILE = WorseSpotifyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.WorseSpotifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorseSpotify.app/WorseSpotify";
+			};
+			name = Debug;
+		};
+		2943E3A6250EE6160090578E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U774TM88M6;
+				INFOPLIST_FILE = WorseSpotifyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.WorseSpotifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorseSpotify.app/WorseSpotify";
+			};
+			name = Release;
+		};
+		2943E3A8250EE6160090578E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U774TM88M6;
+				INFOPLIST_FILE = WorseSpotifyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.WorseSpotifyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WorseSpotify;
+			};
+			name = Debug;
+		};
+		2943E3A9250EE6160090578E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U774TM88M6;
+				INFOPLIST_FILE = WorseSpotifyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.WorseSpotifyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WorseSpotify;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2943E372250EE6110090578E /* Build configuration list for PBXProject "WorseSpotify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2943E39F250EE6160090578E /* Debug */,
+				2943E3A0250EE6160090578E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2943E3A1250EE6160090578E /* Build configuration list for PBXNativeTarget "WorseSpotify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2943E3A2250EE6160090578E /* Debug */,
+				2943E3A3250EE6160090578E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2943E3A4250EE6160090578E /* Build configuration list for PBXNativeTarget "WorseSpotifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2943E3A5250EE6160090578E /* Debug */,
+				2943E3A6250EE6160090578E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2943E3A7250EE6160090578E /* Build configuration list for PBXNativeTarget "WorseSpotifyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2943E3A8250EE6160090578E /* Debug */,
+				2943E3A9250EE6160090578E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2943E36F250EE6110090578E /* Project object */;
+}
