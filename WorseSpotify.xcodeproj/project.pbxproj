@@ -15,6 +15,8 @@
 		2943E387250EE6160090578E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2943E385250EE6160090578E /* LaunchScreen.storyboard */; };
 		2943E392250EE6160090578E /* WorseSpotifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E391250EE6160090578E /* WorseSpotifyTests.swift */; };
 		2943E39D250EE6160090578E /* WorseSpotifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E39C250EE6160090578E /* WorseSpotifyUITests.swift */; };
+		2943E3AB25189DC00090578E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E3AA25189DC00090578E /* AuthViewController.swift */; };
+		2943E3AD2518A3C20090578E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943E3AC2518A3C20090578E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2943E398250EE6160090578E /* WorseSpotifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorseSpotifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2943E39C250EE6160090578E /* WorseSpotifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorseSpotifyUITests.swift; sourceTree = "<group>"; };
 		2943E39E250EE6160090578E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2943E3AA25189DC00090578E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		2943E3AC2518A3C20090578E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				2943E37A250EE6110090578E /* AppDelegate.swift */,
 				2943E37C250EE6110090578E /* SceneDelegate.swift */,
 				2943E37E250EE6110090578E /* ViewController.swift */,
+				2943E3AA25189DC00090578E /* AuthViewController.swift */,
+				2943E3AC2518A3C20090578E /* Constants.swift */,
 				2943E380250EE6110090578E /* Main.storyboard */,
 				2943E383250EE6160090578E /* Assets.xcassets */,
 				2943E385250EE6160090578E /* LaunchScreen.storyboard */,
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2943E3AD2518A3C20090578E /* Constants.swift in Sources */,
+				2943E3AB25189DC00090578E /* AuthViewController.swift in Sources */,
 				2943E37F250EE6110090578E /* ViewController.swift in Sources */,
 				2943E37B250EE6110090578E /* AppDelegate.swift in Sources */,
 				2943E37D250EE6110090578E /* SceneDelegate.swift in Sources */,
