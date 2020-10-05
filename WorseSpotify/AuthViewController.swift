@@ -11,16 +11,22 @@ import AuthenticationServices
 //import CryptoKit // do i need this?
 
 class AuthViewController: UIViewController, ASWebAuthenticationPresentationContextProviding {
+    
+    var spotifyDataObject = SpotifyDataObject()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        getAuthCode()
+        
     }
     
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
         return self.view.window ?? ASPresentationAnchor()
+    }
+    
+    @IBAction func LogInPushed(_ sender: Any) {
+        getAuthCode()
     }
     
     func getAuthCode() {
@@ -39,7 +45,7 @@ class AuthViewController: UIViewController, ASWebAuthenticationPresentationConte
     func startSession(code: String) {
         let url = URL(string: "https://accounts.spotify.com/api/token")!
         var request = URLRequest(url: url)
-        request.setValue("application/x-www-from-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         var urlComponents = URLComponents()
         urlComponents.queryItems = [
@@ -59,17 +65,18 @@ class AuthViewController: UIViewController, ASWebAuthenticationPresentationConte
             
             guard (200...299) ~= response.statusCode else { // not sure what ~= means?
                 print("status code: \(response.statusCode)")
-                print("response = \(response)")
+//                print("response = \(response)")
                 return
             }
             
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
+//            let responseString = String(data: data, encoding: .utf8)
+//            print("responseString = \(responseString)")
             do {
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
-                print(jsonResult!)
+//                print(jsonResult!)
                 let token = jsonResult?["access_token"] as! String
-                print(token)
+//                print(token)
+                self.spotifyDataObject.accessToken = token
                 self.getUser(accessToken: token)
             }
             catch let error as NSError {
@@ -92,19 +99,65 @@ class AuthViewController: UIViewController, ASWebAuthenticationPresentationConte
             
             guard (200...299) ~= response.statusCode else { // not sure what ~= means?
                 print("status code: \(response.statusCode)")
-                print("response = \(response)")
+//                print("response for getUser = \(response)")
+                
                 return
             }
             
             do {
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
-                print(jsonResult!)
+//                let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+//                print(jsonResult!)
+                
+                let decoder = JSONDecoder()
+                let user = try decoder.decode(User.self, from: data)
+                self.spotifyDataObject.user = user
+                print(self.spotifyDataObject)
+                
+                DispatchQueue.main.async { // i think?
+                   self.performSegue(withIdentifier: "nextScene", sender: self.spotifyDataObject)
+                }
             }
             catch let error as NSError {
-                print(error.debugDescription)
+                print("NSError: \(error.debugDescription)")
             }
         }
         task.resume()
+    }
+    
+    func getSongs(accessToken: String) {
+        let url = URL(string: "https://api.spotify.com/v1/me/tracks")!
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
+                print("error", error ?? "i cant help u with this one buddy")
+                return
+            }
+                    
+            guard (200...299) ~= response.statusCode else { // not sure what ~= means?
+                print("status code: \(response.statusCode)")
+                return
+            }
+                    
+            do {
+                print(data)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+                print(jsonResult!)
+                        
+//                        let decoder = JSONDecoder()
+//                        let user = try decoder.decode(User.self, from: data)
+//                        print(user.display_name)
+            }
+            catch let error as NSError {
+                print("NSError: \(error.debugDescription)")
+            }
+        }
+        task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! MainTabViewController).spotifyDataObject = (sender as! SpotifyDataObject)
     }
 
     /*
