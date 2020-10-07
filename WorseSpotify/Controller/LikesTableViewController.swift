@@ -1,4 +1,4 @@
-//
+// Users/angelinaolmedo/term6/WorseSpotify/WorseSpotify/SceneDelegate.swift//
 //  BrowseTableViewController.swift
 //  WorseSpotify
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowseTableViewController: UITableViewController {
+class LikesTableViewController: UITableViewController {
 
 //    private let context = CIContext()
     let queue = OperationQueue()
@@ -52,7 +52,7 @@ class BrowseTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "browseReuseIdentifier", for: indexPath) as! BrowseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "browseReuseIdentifier", for: indexPath) as! SongsTableViewCell
 
         // Configure the cell...
         if let songList = self.songList {

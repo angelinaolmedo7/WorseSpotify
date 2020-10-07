@@ -21,11 +21,14 @@
 		296295B0252A8A63005378DB /* SpotifyDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295AF252A8A63005378DB /* SpotifyDataObject.swift */; };
 		296295B2252B27C8005378DB /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B1252B27C8005378DB /* MainTabViewController.swift */; };
 		296295B4252B2D36005378DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B3252B2D36005378DB /* ProfileViewController.swift */; };
-		296295B6252B4029005378DB /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B5252B4029005378DB /* BrowseTableViewController.swift */; };
+		296295B6252B4029005378DB /* LikesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B5252B4029005378DB /* LikesTableViewController.swift */; };
 		296295B8252C89B6005378DB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B7252C89B6005378DB /* Song.swift */; };
 		296295BA252D88FC005378DB /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B9252D88FC005378DB /* AsyncOperation.swift */; };
 		296295BC252D8A01005378DB /* SongListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295BB252D8A01005378DB /* SongListOperation.swift */; };
-		296295BE252DAB0B005378DB /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295BD252DAB0B005378DB /* BrowseTableViewCell.swift */; };
+		296295BE252DAB0B005378DB /* SongsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295BD252DAB0B005378DB /* SongsTableViewCell.swift */; };
+		296295C2252DEFCA005378DB /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295C1252DEFCA005378DB /* AlbumTableViewCell.swift */; };
+		296295C4252DF0BD005378DB /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295C3252DF0BD005378DB /* AlbumsTableViewController.swift */; };
+		296295C6252DF0FC005378DB /* AlbumListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295C5252DF0FC005378DB /* AlbumListOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,11 +69,14 @@
 		296295AF252A8A63005378DB /* SpotifyDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyDataObject.swift; sourceTree = "<group>"; };
 		296295B1252B27C8005378DB /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		296295B3252B2D36005378DB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		296295B5252B4029005378DB /* BrowseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableViewController.swift; sourceTree = "<group>"; };
+		296295B5252B4029005378DB /* LikesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesTableViewController.swift; sourceTree = "<group>"; };
 		296295B7252C89B6005378DB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		296295B9252D88FC005378DB /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		296295BB252D8A01005378DB /* SongListOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListOperation.swift; sourceTree = "<group>"; };
-		296295BD252DAB0B005378DB /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableViewCell.swift; sourceTree = "<group>"; };
+		296295BD252DAB0B005378DB /* SongsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewCell.swift; sourceTree = "<group>"; };
+		296295C1252DEFCA005378DB /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		296295C3252DF0BD005378DB /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
+		296295C5252DF0FC005378DB /* AlbumListOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 				296295B7252C89B6005378DB /* Song.swift */,
 				296295B9252D88FC005378DB /* AsyncOperation.swift */,
 				296295BB252D8A01005378DB /* SongListOperation.swift */,
+				296295C5252DF0FC005378DB /* AlbumListOperation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,7 +178,8 @@
 		296295BF252DAB18005378DB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				296295BD252DAB0B005378DB /* BrowseTableViewCell.swift */,
+				296295BD252DAB0B005378DB /* SongsTableViewCell.swift */,
+				296295C1252DEFCA005378DB /* AlbumTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,7 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				2943E3AA25189DC00090578E /* AuthViewController.swift */,
-				296295B5252B4029005378DB /* BrowseTableViewController.swift */,
+				296295B5252B4029005378DB /* LikesTableViewController.swift */,
+				296295C3252DF0BD005378DB /* AlbumsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,12 +325,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296295C6252DF0FC005378DB /* AlbumListOperation.swift in Sources */,
 				2943E3AD2518A3C20090578E /* Constants.swift in Sources */,
 				296295B2252B27C8005378DB /* MainTabViewController.swift in Sources */,
 				2943E3AB25189DC00090578E /* AuthViewController.swift in Sources */,
-				296295B6252B4029005378DB /* BrowseTableViewController.swift in Sources */,
+				296295B6252B4029005378DB /* LikesTableViewController.swift in Sources */,
 				296295AE2525B4BD005378DB /* User.swift in Sources */,
-				296295BE252DAB0B005378DB /* BrowseTableViewCell.swift in Sources */,
+				296295C4252DF0BD005378DB /* AlbumsTableViewController.swift in Sources */,
+				296295C2252DEFCA005378DB /* AlbumTableViewCell.swift in Sources */,
+				296295BE252DAB0B005378DB /* SongsTableViewCell.swift in Sources */,
 				2943E37F250EE6110090578E /* ViewController.swift in Sources */,
 				2943E37B250EE6110090578E /* AppDelegate.swift in Sources */,
 				296295B4252B2D36005378DB /* ProfileViewController.swift in Sources */,

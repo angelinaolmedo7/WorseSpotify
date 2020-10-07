@@ -23,4 +23,14 @@ struct Song {
     }
 }
 
-
+struct Album {
+    var name: String?
+    var id: String?
+    var artist: String?
+    
+    init(name: String?, albumId: String?, artist: String?) {
+        self.name = name
+        self.id = albumId
+        self.artist = artist
+    }
+}

@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class BrowseTableViewCell: UITableViewCell {
+class SongsTableViewCell: UITableViewCell {
     
     let queue = OperationQueue()  // i probably shouldnt be making this many of theese but oh well
     
