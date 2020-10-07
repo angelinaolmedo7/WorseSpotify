@@ -91,3 +91,51 @@ final class SongListOperation: AsyncOperation {
             return songArray
         }
 }
+
+final class RemoveLikeOperation: AsyncOperation {
+    
+    private let completion: ((Data?, URLResponse?, Error?) -> Void)?
+    let songID: String
+    let accessToken: String
+    
+    init(songID: String, accessToken: String, completion: ((Data?, URLResponse?, Error?) -> Void)? = nil) {
+        self.songID = songID
+        self.accessToken = accessToken
+        self.completion = completion
+        super.init()
+    }
+    
+    override func main() {
+        let url = URL(string: "https://api.spotify.com/v1/me/tracks?ids=\(self.songID)")!
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "DELETE"
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let self = self else { return }
+            defer { self.state = .finished }
+                
+            if let completion = self.completion {  // should this be later?
+                completion(data, response, error)
+                return
+            }
+                
+            guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
+                print("error", error ?? "Unknown error: Could not remove song")
+                return
+            }
+                        
+            guard (200...299) ~= response.statusCode else { // not sure what ~= means?
+                print("status code: \(response.statusCode)")
+                return
+            }
+                    
+            do {
+                // nothing (mood)
+            }
+            catch let error as NSError {
+                print("NSError: \(error.debugDescription)")
+            }
+        }
+        task.resume()
+    }
+}

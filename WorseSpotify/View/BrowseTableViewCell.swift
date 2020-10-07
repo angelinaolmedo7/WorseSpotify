@@ -12,6 +12,7 @@ import AVKit
 
 class BrowseTableViewCell: UITableViewCell {
     
+    let queue = OperationQueue()  // i probably shouldnt be making this many of theese but oh well
     
     @IBOutlet weak var songTitleLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
@@ -21,6 +22,7 @@ class BrowseTableViewCell: UITableViewCell {
     var playerLayer: AVPlayerLayer?
     
     var song: Song?
+    var spotifyDataObject: SpotifyDataObject?
     var isPlaying: Bool = false
     
     override func awakeFromNib() {
@@ -39,6 +41,20 @@ class BrowseTableViewCell: UITableViewCell {
 //        }
 //    }
     
+    func setDetails(song: Song?, spotifyData: SpotifyDataObject?) {
+        guard let song = song else {
+            print ("EMPTY SONG RECIEVED")
+            return
+        }
+        guard spotifyData != nil else {
+            print ("EMPTY USER RECIEVED")
+            return
+        }
+        self.song = song
+        self.spotifyDataObject = spotifyData
+        songTitleLabel.text = song.name ?? "TITLE NOT FOUND"
+    }
+    
     func updatePlayImage() {
         if self.isPlaying {
             self.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
@@ -46,6 +62,36 @@ class BrowseTableViewCell: UITableViewCell {
         else {
             self.playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }
+    }
+    
+    func updateLikedImage() {
+        if self.song?.liked ?? false {  // is liked
+            self.likeButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        else {
+            self.likeButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+    }
+    
+    func unlikeSong() {
+        // IMPORTANT performs action in spotify
+        guard song != nil else {
+            print ("EMPTY SONG RECIEVED")
+            return
+        }
+        guard spotifyDataObject != nil else {
+            print ("EMPTY USER RECIEVED")
+            return
+        }
+        
+        let op = RemoveLikeOperation(songID: self.song!.id!, accessToken: self.spotifyDataObject!.accessToken!)
+        op.completionBlock = {
+          DispatchQueue.main.async {
+            self.song!.liked = false
+            self.updateLikedImage()
+          }
+        }
+        queue.addOperation(op)
     }
 
     @IBAction func playButtonPressed(_ sender: Any) {
@@ -74,16 +120,7 @@ class BrowseTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonPressed(_ sender: Any) {
-    }
-    
-    
-    func setDetails(song: Song?) {
-        guard let song = song else {
-            print ("EMPTY SONG RECIEVED")
-            return
-        }
-        self.song = song
-        songTitleLabel.text = song.name ?? "TITLE NOT FOUND"
+        self.unlikeSong()
     }
     
 //    func showActivityIndicator() {

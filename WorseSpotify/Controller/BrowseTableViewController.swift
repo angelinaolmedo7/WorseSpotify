@@ -16,7 +16,7 @@ class BrowseTableViewController: UITableViewController {
     var spotifyDataObject: SpotifyDataObject!
     var songList: [Song]? {
         didSet {
-            print("song list is now \(songList)")
+//            print("song list is now \(songList)")
             self.tableView.reloadData()
         }
     }
@@ -29,9 +29,6 @@ class BrowseTableViewController: UITableViewController {
         
         spotifyDataObject = (self.presentingViewController as! AuthViewController).spotifyDataObject
         
-        
-//        print((self.presentingViewController as! AuthViewController).getSongs(accessToken: spotifyDataObject.accessToken!))
-        
         let op = SongListOperation(accessToken: spotifyDataObject.accessToken!)
         op.completionBlock = {
           DispatchQueue.main.async {
@@ -40,11 +37,6 @@ class BrowseTableViewController: UITableViewController {
         }
         queue.addOperation(op)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -65,7 +57,7 @@ class BrowseTableViewController: UITableViewController {
         // Configure the cell...
         if let songList = self.songList {
             print(songList)
-            cell.setDetails(song: songList[indexPath.row])
+            cell.setDetails(song: songList[indexPath.row], spotifyData: self.spotifyDataObject)
         }
 
         return cell
