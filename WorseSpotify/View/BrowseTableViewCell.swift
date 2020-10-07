@@ -14,11 +14,14 @@ class BrowseTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var songTitleLabel: UILabel!
-
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     
     var song: Song?
+    var isPlaying: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,20 +38,44 @@ class BrowseTableViewCell: UITableViewCell {
 //            }
 //        }
 //    }
+    
+    func updatePlayImage() {
+        if self.isPlaying {
+            self.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+        }
+        else {
+            self.playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        }
+    }
+
     @IBAction func playButtonPressed(_ sender: Any) {
         
-        print("Attempting to play song")
-        let url  = URL.init(string: song?.previewURL ?? "ERROR")
+        if self.isPlaying {  // already playing
+            self.isPlaying = false
+            player!.pause()
+            self.updatePlayImage()
+            return
+        }
         
-        let playerItem: AVPlayerItem = AVPlayerItem(url: url!)
-        player = AVPlayer(playerItem: playerItem)
-        playerLayer = AVPlayerLayer(player: player)
-        
-        self.contentView.layer.addSublayer(playerLayer!)
+        if self.player == nil {  // change to guard?
+            let url  = URL.init(string: song?.previewURL ?? "ERROR")
+            
+            let playerItem: AVPlayerItem = AVPlayerItem(url: url!)
+            player = AVPlayer(playerItem: playerItem)
+            playerLayer = AVPlayerLayer(player: player)
+            
+            self.contentView.layer.addSublayer(playerLayer!)
+        }
         
 //        self.view.layer.addSublayer(playerLayer)
+        self.isPlaying = true
         player!.play()
+        self.updatePlayImage()
     }
+    
+    @IBAction func likeButtonPressed(_ sender: Any) {
+    }
+    
     
     func setDetails(song: Song?) {
         guard let song = song else {
