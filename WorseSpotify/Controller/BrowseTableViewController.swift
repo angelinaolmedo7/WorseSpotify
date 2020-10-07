@@ -9,15 +9,36 @@
 import UIKit
 
 class BrowseTableViewController: UITableViewController {
+
+//    private let context = CIContext()
+    let queue = OperationQueue()
     
     var spotifyDataObject: SpotifyDataObject!
+    var songList: [Song]? {
+        didSet {
+            print("song list is now \(songList)")
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.tableView.delegate = self
+//        self.tableView.datasource = self
+        
         spotifyDataObject = (self.presentingViewController as! AuthViewController).spotifyDataObject
         
         
-        print((self.presentingViewController as! AuthViewController).getSongs(accessToken: spotifyDataObject.accessToken!))
+//        print((self.presentingViewController as! AuthViewController).getSongs(accessToken: spotifyDataObject.accessToken!))
+        
+        let op = SongListOperation(accessToken: spotifyDataObject.accessToken!)
+        op.completionBlock = {
+          DispatchQueue.main.async {
+            self.songList = op.songList
+          }
+        }
+        queue.addOperation(op)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,13 +56,17 @@ class BrowseTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return (songList ?? []).count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "browseReuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "browseReuseIdentifier", for: indexPath) as! BrowseTableViewCell
 
         // Configure the cell...
+        if let songList = self.songList {
+            print(songList)
+            cell.setDetails(song: songList[indexPath.row])
+        }
 
         return cell
     }

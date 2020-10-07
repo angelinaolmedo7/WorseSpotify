@@ -10,13 +10,16 @@ import Foundation
 struct Song {
     var name: String?
     var id: String?
+    var previewURL: String?
     var artist: String?
     var liked: Bool
     
-    init(name: String?, songId: String?, artist: String?, liked: Bool?) {
+    init(name: String?, songId: String?, previewURL: String?, artist: String?, liked: Bool?) {
         self.name = name
         self.id = songId
+        self.previewURL = previewURL
         self.artist = artist
         self.liked = liked ?? false
     }
 }
+

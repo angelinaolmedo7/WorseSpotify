@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="browseReuseIdentifier" id="FYh-zx-MKG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="browseReuseIdentifier" id="FYh-zx-MKG" customClass="BrowseTableViewCell" customModule="WorseSpotify" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FYh-zx-MKG" id="7fP-jv-vUd">
@@ -90,6 +90,9 @@
                                                         <constraint firstAttribute="width" secondItem="32o-bk-dYZ" secondAttribute="height" multiplier="1:1" id="cIQ-Aq-Haz"/>
                                                     </constraints>
                                                     <state key="normal" image="play.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="playButtonPressed:" destination="FYh-zx-MKG" eventType="touchUpInside" id="tvr-uN-sL8"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRZ-Ny-9bX">
                                                     <rect key="frame" x="40" y="0.0" width="315" height="40"/>
@@ -117,6 +120,9 @@
                                         <constraint firstAttribute="bottom" secondItem="vQ2-dS-AD3" secondAttribute="bottom" constant="10" id="xdJ-LF-pIh"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="songTitleLabel" destination="mRZ-Ny-9bX" id="Bmn-ui-CCw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
