@@ -92,6 +92,59 @@ final class SongListOperation: AsyncOperation {
         }
 }
 
+final class CheckLikeOperation: AsyncOperation {
+    
+    var liked: Bool?
+    
+    private let completion: ((Data?, URLResponse?, Error?) -> Void)?
+    let songID: String
+    let accessToken: String
+    
+    init(songID: String, accessToken: String, completion: ((Data?, URLResponse?, Error?) -> Void)? = nil) {
+        self.songID = songID
+        self.accessToken = accessToken
+        self.completion = completion
+        super.init()
+    }
+    
+    override func main() {
+        let url = URL(string: "https://api.spotify.com/v1/me/tracks/contains?ids=\(self.songID)")!
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let self = self else { return }
+            defer { self.state = .finished }
+                
+            if let completion = self.completion {  // should this be later?
+                completion(data, response, error)
+                return
+            }
+                
+            guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
+                print("error", error ?? "Unknown error: Could not check song")
+                return
+            }
+                        
+            guard (200...299) ~= response.statusCode else { // not sure what ~= means?
+                print("status code: \(response.statusCode)")
+                return
+            }
+                    
+            do {
+                print(data)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSArray
+                self.liked = jsonResult![0] as! Bool
+            }
+            catch let error as NSError {
+                print("NSError: \(error.debugDescription)")
+            }
+        }
+        task.resume()
+    }
+}
+
+
 final class RemoveLikeOperation: AsyncOperation {
     
     private let completion: ((Data?, URLResponse?, Error?) -> Void)?
@@ -119,8 +172,8 @@ final class RemoveLikeOperation: AsyncOperation {
                 return
             }
                 
-            guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
-                print("error", error ?? "Unknown error: Could not remove song")
+            guard let _ = data, let response = response as? HTTPURLResponse, error == nil else {
+                print("error", error ?? "Unknown error: Could not add song")
                 return
             }
                         
@@ -130,6 +183,56 @@ final class RemoveLikeOperation: AsyncOperation {
             }
                     
             do {
+                print("Removed \(self.songID) from likes")
+                // nothing (mood)
+            }
+            catch let error as NSError {
+                print("NSError: \(error.debugDescription)")
+            }
+        }
+        task.resume()
+    }
+}
+
+final class AddLikeOperation: AsyncOperation {
+    
+    private let completion: ((Data?, URLResponse?, Error?) -> Void)?
+    let songID: String
+    let accessToken: String
+    
+    init(songID: String, accessToken: String, completion: ((Data?, URLResponse?, Error?) -> Void)? = nil) {
+        self.songID = songID
+        self.accessToken = accessToken
+        self.completion = completion
+        super.init()
+    }
+    
+    override func main() {
+        let url = URL(string: "https://api.spotify.com/v1/me/tracks?ids=\(self.songID)")!
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "PUT"
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let self = self else { return }
+            defer { self.state = .finished }
+                
+            if let completion = self.completion {  // should this be later?
+                completion(data, response, error)
+                return
+            }
+                
+            guard let _ = data, let response = response as? HTTPURLResponse, error == nil else {
+                print("error", error ?? "Unknown error: Could not add song")
+                return
+            }
+                        
+            guard (200...299) ~= response.statusCode else { // not sure what ~= means?
+                print("status code: \(response.statusCode)")
+                return
+            }
+                    
+            do {
+                print("Added \(self.songID) to likes")
                 // nothing (mood)
             }
             catch let error as NSError {

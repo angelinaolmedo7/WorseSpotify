@@ -52,7 +52,9 @@ class BrowseTableViewCell: UITableViewCell {
         }
         self.song = song
         self.spotifyDataObject = spotifyData
-        songTitleLabel.text = song.name ?? "TITLE NOT FOUND"
+        self.songTitleLabel.text = song.name ?? "TITLE NOT FOUND"
+        self.checkLiked()
+        
     }
     
     func updatePlayImage() {
@@ -63,6 +65,7 @@ class BrowseTableViewCell: UITableViewCell {
             self.playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }
     }
+    
     
     func updateLikedImage() {
         if self.song?.liked ?? false {  // is liked
@@ -88,6 +91,47 @@ class BrowseTableViewCell: UITableViewCell {
         op.completionBlock = {
           DispatchQueue.main.async {
             self.song!.liked = false
+            self.updateLikedImage()
+          }
+        }
+        queue.addOperation(op)
+    }
+    
+    func checkLiked() {
+        guard song != nil else {
+            print ("EMPTY SONG RECIEVED")
+            return
+        }
+        guard spotifyDataObject != nil else {
+            print ("EMPTY USER RECIEVED")
+            return
+        }
+            
+        let op = CheckLikeOperation(songID: self.song!.id!, accessToken: self.spotifyDataObject!.accessToken!)
+        op.completionBlock = {
+            DispatchQueue.main.async {
+                self.song!.liked = op.liked ?? false
+                self.updateLikedImage()
+            }
+        }
+        queue.addOperation(op)
+    }
+    
+    func likeSong() {
+        // IMPORTANT performs action in spotify
+        guard song != nil else {
+            print ("EMPTY SONG RECIEVED")
+            return
+        }
+        guard spotifyDataObject != nil else {
+            print ("EMPTY USER RECIEVED")
+            return
+        }
+        
+        let op = AddLikeOperation(songID: self.song!.id!, accessToken: self.spotifyDataObject!.accessToken!)
+        op.completionBlock = {
+          DispatchQueue.main.async {
+            self.song!.liked = true
             self.updateLikedImage()
           }
         }
@@ -120,7 +164,13 @@ class BrowseTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonPressed(_ sender: Any) {
-        self.unlikeSong()
+        if self.song!.liked {
+           self.unlikeSong()
+        }
+        else {
+            self.likeSong()
+        }
+        
     }
     
 //    func showActivityIndicator() {
