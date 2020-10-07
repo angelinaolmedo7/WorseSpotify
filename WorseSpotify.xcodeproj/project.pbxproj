@@ -22,6 +22,7 @@
 		296295B2252B27C8005378DB /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B1252B27C8005378DB /* MainTabViewController.swift */; };
 		296295B4252B2D36005378DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B3252B2D36005378DB /* ProfileViewController.swift */; };
 		296295B6252B4029005378DB /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B5252B4029005378DB /* BrowseTableViewController.swift */; };
+		296295B8252C89B6005378DB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295B7252C89B6005378DB /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		296295B1252B27C8005378DB /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		296295B3252B2D36005378DB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		296295B5252B4029005378DB /* BrowseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableViewController.swift; sourceTree = "<group>"; };
+		296295B7252C89B6005378DB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				296295AD2525B4BD005378DB /* User.swift */,
 				296295AF252A8A63005378DB /* SpotifyDataObject.swift */,
+				296295B7252C89B6005378DB /* Song.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				2943E37B250EE6110090578E /* AppDelegate.swift in Sources */,
 				296295B4252B2D36005378DB /* ProfileViewController.swift in Sources */,
 				296295B0252A8A63005378DB /* SpotifyDataObject.swift in Sources */,
+				296295B8252C89B6005378DB /* Song.swift in Sources */,
 				2943E37D250EE6110090578E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

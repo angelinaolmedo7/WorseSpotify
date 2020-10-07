@@ -75,40 +75,38 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="browseReuseIdentifier" id="FYh-zx-MKG">
-                                <rect key="frame" x="0.0" y="28" width="414" height="70.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FYh-zx-MKG" id="7fP-jv-vUd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQ2-dS-AD3">
-                                            <rect key="frame" x="10" y="10" width="394" height="50.5"/>
+                                            <rect key="frame" x="10" y="10" width="394" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32o-bk-dYZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="O0H-cf-yxY"/>
                                                         <constraint firstAttribute="width" secondItem="32o-bk-dYZ" secondAttribute="height" multiplier="1:1" id="cIQ-Aq-Haz"/>
                                                     </constraints>
                                                     <state key="normal" image="play.fill" catalog="system"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRZ-Ny-9bX">
-                                                    <rect key="frame" x="50" y="0.0" width="293.5" height="50.5"/>
+                                                    <rect key="frame" x="40" y="0.0" width="315" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdi-pi-PpJ">
-                                                    <rect key="frame" x="343.5" y="0.0" width="50.5" height="50.5"/>
+                                                    <rect key="frame" x="355" y="0.0" width="39" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hdi-pi-PpJ" secondAttribute="height" multiplier="1:1" id="oL1-xU-9ZG"/>
-                                                        <constraint firstAttribute="width" constant="50" id="w1j-VJ-dRH"/>
                                                     </constraints>
                                                     <state key="normal" image="star" catalog="system"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hdi-pi-PpJ" firstAttribute="width" secondItem="hdi-pi-PpJ" secondAttribute="height" multiplier="1:1" id="byG-Pw-HKx"/>
+                                                <constraint firstItem="mRZ-Ny-9bX" firstAttribute="width" secondItem="vQ2-dS-AD3" secondAttribute="width" multiplier="0.8" id="nD2-Th-FY6"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>

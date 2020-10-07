@@ -9,9 +9,15 @@
 import UIKit
 
 class BrowseTableViewController: UITableViewController {
+    
+    var spotifyDataObject: SpotifyDataObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        spotifyDataObject = (self.presentingViewController as! AuthViewController).spotifyDataObject
+        
+        
+        print((self.presentingViewController as! AuthViewController).getSongs(accessToken: spotifyDataObject.accessToken!))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

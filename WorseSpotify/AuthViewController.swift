@@ -30,7 +30,8 @@ class AuthViewController: UIViewController, ASWebAuthenticationPresentationConte
     }
     
     func getAuthCode() {
-        let url = URL(string: "https://accounts.spotify.com/authorize?client_id=\(Constants.clientID)&response_type=code&redirect_uri=\(Constants.redirectURI)")!
+        let scope = "user-library-read%20user-library-modify"
+        let url = URL(string: "https://accounts.spotify.com/authorize?client_id=\(Constants.clientID)&response_type=code&redirect_uri=\(Constants.redirectURI)&scope=\(scope)")!
         let session = ASWebAuthenticationSession(url: url, callbackURLScheme: "auth") { callbackURL, error in
             guard error == nil, let callbackURL = callbackURL else{return}
             let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems
@@ -143,7 +144,7 @@ class AuthViewController: UIViewController, ASWebAuthenticationPresentationConte
             do {
                 print(data)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
-                print(jsonResult!)
+                print(self.createSongArray(jsonResult))
                         
 //                        let decoder = JSONDecoder()
 //                        let user = try decoder.decode(User.self, from: data)
@@ -154,6 +155,39 @@ class AuthViewController: UIViewController, ASWebAuthenticationPresentationConte
             }
         }
         task.resume()
+    }
+    
+    func createSongArray(_ NSDict: NSDictionary?) -> [Song] {
+        guard let NSDict = NSDict else {
+            print("Could not retrieve NSDictionary.")
+            return []
+        }
+        
+        let NSSongArray = NSDict["items"] as? NSArray
+        guard let _ = NSSongArray else {
+            print("Could not retrieve NSSongArray.")
+            return []
+        }
+        
+        var songArray: [Song] = []
+        
+        print(NSSongArray![0])
+        
+        for song in NSSongArray! {
+            let trackDict = (song as! NSDictionary)["track"]!
+            let songName = (trackDict as! NSDictionary)["name"]! as! String
+            let songId = (trackDict as! NSDictionary)["id"]! as! String
+            
+            let albumDict = (trackDict as! NSDictionary)["album"]!
+            let artistArr = (albumDict as! NSDictionary)["artists"]!
+            let artistDict = (artistArr as! NSArray)[0]
+            let artistName = (artistDict as! NSDictionary)["name"]! as! String
+            
+            let thisSong = Song(name: songName, songId: songId, artist: artistName, liked: nil)
+            songArray.append(thisSong)
+        }
+        
+        return songArray
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
