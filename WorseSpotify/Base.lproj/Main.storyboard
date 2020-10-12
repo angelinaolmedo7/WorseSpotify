@@ -135,7 +135,13 @@
                             <outlet property="delegate" destination="pJW-23-zgy" id="g6z-aj-99Z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Liked Songs" id="6IC-iE-pzm"/>
+                    <navigationItem key="navigationItem" title="Liked Songs" id="6IC-iE-pzm">
+                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="fab-bn-GeY">
+                            <connections>
+                                <action selector="refreshPressed:" destination="pJW-23-zgy" id="Tws-LO-9kE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roz-cg-esb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,7 +321,7 @@
         <!--Liked Songs-->
         <scene sceneID="ymj-y7-zR1">
             <objects>
-                <tableViewController id="BIM-0o-1SZ" customClass="LikesTableViewController" customModule="WorseSpotify" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="BIM-0o-1SZ" customClass="BrowseAlbumTableViewController" customModule="WorseSpotify" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E00-tc-6MN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -390,6 +396,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="music.note" catalog="system" width="48" height="64"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>

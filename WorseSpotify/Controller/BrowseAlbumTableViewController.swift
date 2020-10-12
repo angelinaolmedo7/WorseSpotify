@@ -1,19 +1,20 @@
-// Users/angelinaolmedo/term6/WorseSpotify/WorseSpotify/SceneDelegate.swift//
-//  BrowseTableViewController.swift
+//
+//  BrowseAlbumTableViewController.swift
 //  WorseSpotify
 //
-//  Created by Angelina Olmedo on 10/5/20.
+//  Created by Angelina Olmedo on 10/7/20.
 //  Copyright © 2020 Angelina Olmedo. All rights reserved.
 //
 
 import UIKit
 
-class LikesTableViewController: UITableViewController {
+class BrowseAlbumTableViewController: UITableViewController {
 
-//    private let context = CIContext()
     let queue = OperationQueue()
     
     var spotifyDataObject: SpotifyDataObject!
+    var albumId: String!
+
     var songList: [Song]? {
         didSet {
 //            print("song list is now \(songList)")
@@ -27,25 +28,18 @@ class LikesTableViewController: UITableViewController {
 //        self.tableView.delegate = self
 //        self.tableView.datasource = self
         
-        spotifyDataObject = (self.presentingViewController as! AuthViewController).spotifyDataObject
+        spotifyDataObject = ((self.presentingViewController as! UITabBarController).presentingViewController as! AuthViewController).spotifyDataObject
         
-        getSongs()
-
-    }
-    
-    func getSongs() {
-        let op = SongListOperation(accessToken: spotifyDataObject.accessToken!)
+        let op = GetAlbumSongsOperation(accessToken: spotifyDataObject.accessToken!, albumId: self.albumId)
         op.completionBlock = {
           DispatchQueue.main.async {
             self.songList = op.songList
           }
         }
         queue.addOperation(op)
+
     }
 
-    @IBAction func refreshPressed(_ sender: Any) {
-        getSongs()
-    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,6 +63,17 @@ class LikesTableViewController: UITableViewController {
 
         return cell
     }
+
+
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

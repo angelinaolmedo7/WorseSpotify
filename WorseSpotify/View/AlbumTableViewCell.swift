@@ -13,8 +13,15 @@ class AlbumTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
-    var song: Song?
+    var album: Album?
     var spotifyDataObject: SpotifyDataObject?
+    
+    func setDetails(album: Album?, spotifyData: SpotifyDataObject?) {
+        self.album = album
+        self.spotifyDataObject = spotifyData
+        self.titleLabel.text = album?.name ?? "ERROR"
+        self.artistLabel.text = "by \(album?.artist ?? "ERROR")"
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

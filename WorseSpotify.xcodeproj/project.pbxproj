@@ -29,6 +29,7 @@
 		296295C2252DEFCA005378DB /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295C1252DEFCA005378DB /* AlbumTableViewCell.swift */; };
 		296295C4252DF0BD005378DB /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295C3252DF0BD005378DB /* AlbumsTableViewController.swift */; };
 		296295C6252DF0FC005378DB /* AlbumListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295C5252DF0FC005378DB /* AlbumListOperation.swift */; };
+		296295C8252E7A3B005378DB /* BrowseAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296295C7252E7A3B005378DB /* BrowseAlbumTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		296295C1252DEFCA005378DB /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		296295C3252DF0BD005378DB /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
 		296295C5252DF0FC005378DB /* AlbumListOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListOperation.swift; sourceTree = "<group>"; };
+		296295C7252E7A3B005378DB /* BrowseAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseAlbumTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			children = (
 				2943E3AA25189DC00090578E /* AuthViewController.swift */,
 				296295B5252B4029005378DB /* LikesTableViewController.swift */,
+				296295C7252E7A3B005378DB /* BrowseAlbumTableViewController.swift */,
 				296295C3252DF0BD005378DB /* AlbumsTableViewController.swift */,
 			);
 			path = Controller;
@@ -336,6 +339,7 @@
 				296295BE252DAB0B005378DB /* SongsTableViewCell.swift in Sources */,
 				2943E37F250EE6110090578E /* ViewController.swift in Sources */,
 				2943E37B250EE6110090578E /* AppDelegate.swift in Sources */,
+				296295C8252E7A3B005378DB /* BrowseAlbumTableViewController.swift in Sources */,
 				296295B4252B2D36005378DB /* ProfileViewController.swift in Sources */,
 				296295BC252D8A01005378DB /* SongListOperation.swift in Sources */,
 				296295B0252A8A63005378DB /* SpotifyDataObject.swift in Sources */,
