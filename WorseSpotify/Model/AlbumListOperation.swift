@@ -83,10 +83,14 @@ final class AlbumListOperation: AsyncOperation {
             let artistDict = (artistArr as! NSArray)[0]
             let artistName = (artistDict as! NSDictionary)["name"]! as! String
             
+            let imagesArr = (album as! NSDictionary)["images"]! as! NSArray
+            let imageDict = (imagesArr)[imagesArr.count - 1]
+            let imageURL = (imageDict as! NSDictionary)["url"] as! String
+            
             let albumId = (album as! NSDictionary)["id"]! as! String
             let albumTitle = (album as! NSDictionary)["name"]! as! String
             
-            let thisAlbum = Album(name: albumTitle, albumId: albumId, artist: artistName)
+            let thisAlbum = Album(name: albumTitle, albumId: albumId, artist: artistName, image: imageURL)
             albumArray.append(thisAlbum)
         }
         

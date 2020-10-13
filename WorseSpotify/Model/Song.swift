@@ -27,10 +27,12 @@ struct Album {
     var name: String?
     var id: String?
     var artist: String?
+    var imageURL: String?
     
-    init(name: String?, albumId: String?, artist: String?) {
+    init(name: String?, albumId: String?, artist: String?, image: String?) {
         self.name = name
         self.id = albumId
         self.artist = artist
+        self.imageURL = image
     }
 }

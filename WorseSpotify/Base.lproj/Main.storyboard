@@ -23,7 +23,7 @@
                                     <action selector="LogInPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Cf-Cn-c2Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liD-Wo-9M3">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liD-Wo-9M3">
                                 <rect key="frame" x="16" y="746" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="this button does nothing"/>
@@ -221,6 +221,9 @@
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Lnh-N5-xNz">
                                                     <rect key="frame" x="381.5" y="2" width="12.5" height="68.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12.5" id="NhR-M8-faa"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </stackView>
@@ -233,6 +236,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="albumImage" destination="DvJ-P1-LF1" id="y5V-up-l5M"/>
                                     <outlet property="artistLabel" destination="Xzt-ge-bQF" id="j5I-Mr-HQ0"/>
                                     <outlet property="titleLabel" destination="UM5-Bm-ahK" id="GCm-a4-pst"/>
                                     <segue destination="BIM-0o-1SZ" kind="showDetail" id="jDB-QR-TCX"/>

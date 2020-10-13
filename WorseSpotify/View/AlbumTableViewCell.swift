@@ -13,6 +13,8 @@ class AlbumTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
+    @IBOutlet weak var albumImage: UIImageView!
+    
     var album: Album?
     var spotifyDataObject: SpotifyDataObject?
     
@@ -21,6 +23,15 @@ class AlbumTableViewCell: UITableViewCell {
         self.spotifyDataObject = spotifyData
         self.titleLabel.text = album?.name ?? "ERROR"
         self.artistLabel.text = "by \(album?.artist ?? "ERROR")"
+    
+        let url: NSURL? = NSURL(string: album?.imageURL ?? "https://cdn.pixabay.com/photo/2017/01/09/20/11/music-1967480_1280.png")  // image of a music note
+        do {
+            let data: NSData = try NSData(contentsOf: url as! URL)
+            albumImage.image = UIImage(data: data as Data)
+        }
+        catch {
+            print("aaa")
+        }
     }
     
     override func awakeFromNib() {
